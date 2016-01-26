@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rih-gt-12O" kind="relationship" relationship="viewControllers" id="zsG-zw-aG1"/>
+                        <segue destination="0Di-fX-Ggl" kind="relationship" relationship="viewControllers" id="zsG-zw-aG1"/>
                         <segue destination="L5l-MG-Iyg" kind="relationship" relationship="viewControllers" id="R2A-fC-bAV"/>
                         <segue destination="4IS-oQ-Z8u" kind="relationship" relationship="viewControllers" id="Dbo-QA-59Q"/>
                     </connections>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-353" y="557"/>
         </scene>
-        <!--Item-->
+        <!--Authors Table View Controller-->
         <scene sceneID="Z85-si-ZpO">
             <objects>
                 <tableViewController id="rih-gt-12O" customClass="AuthorsTableViewController" customModule="Tabbed_Library" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,11 +37,14 @@
                             <outlet property="delegate" destination="rih-gt-12O" id="yj0-QW-p3e"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="lPh-cv-tdm"/>
+                    <navigationItem key="navigationItem" id="hJM-3P-2Jd"/>
+                    <connections>
+                        <segue destination="L5l-MG-Iyg" kind="show" identifier="BooksTableViewControllerSegue" id="ni4-7j-CCd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vr-m6-nmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512" y="174"/>
+            <point key="canvasLocation" x="1324" y="174"/>
         </scene>
         <!--Item-->
         <scene sceneID="uBI-by-MAJ">
@@ -74,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1H-yp-eVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="557"/>
+            <point key="canvasLocation" x="1341" y="952"/>
         </scene>
         <!--Item-->
         <scene sceneID="g3B-2q-XH3">
@@ -93,7 +96,29 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJH-bQ-KTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512" y="970"/>
+            <point key="canvasLocation" x="512" y="952"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="qaH-So-4CQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Di-fX-Ggl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="lPh-cv-tdm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nxv-L6-JGg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rih-gt-12O" kind="relationship" relationship="rootViewController" id="yrF-TG-gd9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JUT-ss-4Uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="174"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ni4-7j-CCd"/>
+    </inferredMetricsTieBreakers>
 </document>
