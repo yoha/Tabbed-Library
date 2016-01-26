@@ -16,7 +16,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="0Di-fX-Ggl" kind="relationship" relationship="viewControllers" id="zsG-zw-aG1"/>
-                        <segue destination="L5l-MG-Iyg" kind="relationship" relationship="viewControllers" id="R2A-fC-bAV"/>
+                        <segue destination="zUT-uw-oxm" kind="relationship" relationship="viewControllers" id="R2A-fC-bAV"/>
                         <segue destination="4IS-oQ-Z8u" kind="relationship" relationship="viewControllers" id="Dbo-QA-59Q"/>
                     </connections>
                 </tabBarController>
@@ -39,7 +39,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="hJM-3P-2Jd"/>
                     <connections>
-                        <segue destination="L5l-MG-Iyg" kind="show" identifier="BooksTableViewControllerSegue" id="ni4-7j-CCd"/>
+                        <segue destination="zUT-uw-oxm" kind="show" identifier="BooksTableViewControllerSegue" id="ni4-7j-CCd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vr-m6-nmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -58,8 +58,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFM-qF-gmE">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UFM-qF-gmE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,9 +77,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1H-yp-eVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341" y="952"/>
+            <point key="canvasLocation" x="-353" y="1826"/>
         </scene>
-        <!--Item-->
+        <!--Books Table View Controller-->
         <scene sceneID="g3B-2q-XH3">
             <objects>
                 <tableViewController id="L5l-MG-Iyg" customClass="BooksTableViewController" customModule="Tabbed_Library" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,11 +92,14 @@
                             <outlet property="delegate" destination="L5l-MG-Iyg" id="tNP-Fi-KSy"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="f1C-ud-la9"/>
+                    <navigationItem key="navigationItem" id="pk9-h9-rfJ"/>
+                    <connections>
+                        <segue destination="4IS-oQ-Z8u" kind="show" identifier="BookCoverViewControllerSegue" id="lue-QW-sIy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJH-bQ-KTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512" y="952"/>
+            <point key="canvasLocation" x="1324" y="952"/>
         </scene>
         <!--Item-->
         <scene sceneID="qaH-So-4CQ">
@@ -117,8 +120,28 @@
             </objects>
             <point key="canvasLocation" x="512" y="174"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="IUi-xx-KR5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zUT-uw-oxm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="f1C-ud-la9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BEC-4f-19W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="L5l-MG-Iyg" kind="relationship" relationship="rootViewController" id="88j-Du-dV0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dD-qw-BcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="952"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ni4-7j-CCd"/>
+        <segue reference="lue-QW-sIy"/>
     </inferredMetricsTieBreakers>
 </document>

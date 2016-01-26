@@ -12,15 +12,30 @@ class BooksTableViewController: UITableViewController {
     
     // MARK: - Stored Properties
     
-    var author: [String: AnyObject]!
+    var author: [String: AnyObject]?
 
-    
-    var books: [AnyObject] {
-        guard let validBooks = author["Books"] as? [AnyObject] else {
-            return [AnyObject]()
+    lazy var books: [AnyObject] = {
+        var buffer = [AnyObject]()
+        
+        guard let validAuthor = self.author, let validBooks = validAuthor["Books"] as? [AnyObject] else {
+            guard let validFilePathToResources = NSBundle.mainBundle().pathForResource("Books", ofType: "plist"), let authors = NSArray.init(contentsOfFile: validFilePathToResources) as? [AnyObject] else { return buffer }
+            for author in authors {
+                if let book = author["Books"] as? [AnyObject] {
+                    buffer += book
+                }
+            }
+            return buffer
         }
-        return validBooks
-    }
+        buffer += validBooks
+        return buffer
+    }()
+    
+//    var books: [AnyObject] {
+//        guard let validAuthor = self.author, let validBooks = validAuthor["Books"] as? [AnyObject] else {
+//            return [AnyObject]()
+//        }
+//        return validBooks
+//    }
 
     let bookTableViewCellIdentifier = "BookTableViewCellIdentifier"
     let bookCoverViewControllerSegue = "BookCoverViewControllerSegue"
@@ -32,7 +47,7 @@ class BooksTableViewController: UITableViewController {
         
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.bookTableViewCellIdentifier)
         
-        self.title = self.author["Author"] as? String ?? nil
+        self.title = self.author?["Author"] as? String ?? "Books"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -41,7 +56,6 @@ class BooksTableViewController: UITableViewController {
                 guard let validDestinationVieWController = segue.destinationViewController as? BookCoverViewController else { return }
                 validDestinationVieWController.book = validBook
             }
-            
         }
     }
     
