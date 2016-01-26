@@ -14,10 +14,86 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="rih-gt-12O" kind="relationship" relationship="viewControllers" id="zsG-zw-aG1"/>
+                        <segue destination="L5l-MG-Iyg" kind="relationship" relationship="viewControllers" id="R2A-fC-bAV"/>
+                        <segue destination="4IS-oQ-Z8u" kind="relationship" relationship="viewControllers" id="Dbo-QA-59Q"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pP-vT-NXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-353" y="557"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Z85-si-ZpO">
+            <objects>
+                <tableViewController id="rih-gt-12O" customClass="AuthorsTableViewController" customModule="Tabbed_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="prn-YB-3o1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="rih-gt-12O" id="1ct-SA-iXN"/>
+                            <outlet property="delegate" destination="rih-gt-12O" id="yj0-QW-p3e"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="lPh-cv-tdm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6vr-m6-nmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="174"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uBI-by-MAJ">
+            <objects>
+                <viewController id="4IS-oQ-Z8u" customClass="BookCoverViewController" customModule="Tabbed_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dnm-Cb-xem"/>
+                        <viewControllerLayoutGuide type="bottom" id="yGt-n3-ZiT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Df-J3-0ht">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFM-qF-gmE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UFM-qF-gmE" firstAttribute="top" secondItem="7Df-J3-0ht" secondAttribute="top" id="4OU-Xd-Fix"/>
+                            <constraint firstItem="UFM-qF-gmE" firstAttribute="leading" secondItem="7Df-J3-0ht" secondAttribute="leading" id="9P0-Es-hM7"/>
+                            <constraint firstAttribute="trailing" secondItem="UFM-qF-gmE" secondAttribute="trailing" id="KBM-1y-ZAZ"/>
+                            <constraint firstItem="yGt-n3-ZiT" firstAttribute="top" secondItem="UFM-qF-gmE" secondAttribute="bottom" id="Mhf-19-ZmI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="rj7-Kj-6mw"/>
+                    <connections>
+                        <outlet property="bookCoverImageView" destination="UFM-qF-gmE" id="EHZ-Ks-VZL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1H-yp-eVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1268" y="557"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="g3B-2q-XH3">
+            <objects>
+                <tableViewController id="L5l-MG-Iyg" customClass="BooksTableViewController" customModule="Tabbed_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eod-80-ebQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="L5l-MG-Iyg" id="dwY-Ok-5Rt"/>
+                            <outlet property="delegate" destination="L5l-MG-Iyg" id="tNP-Fi-KSy"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="f1C-ud-la9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJH-bQ-KTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="970"/>
         </scene>
     </scenes>
 </document>
