@@ -17,6 +17,14 @@ class AuthorsTableViewController: UITableViewController {
     let authorTableViewCellIdentifier = "AuthorTableViewCellIdentifier"
     let booksTableViewControllerSegue = "BooksTableViewControllerSegue"
     
+    // MARK: - NSCoding Protocol Initializer
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.tabBarItem = UITabBarItem(title: "Authors", image: UIImage(named: "icon-authors"), tag: 0)
+    }
+    
     // MARK: - UIViewController Methods
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

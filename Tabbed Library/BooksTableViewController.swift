@@ -29,16 +29,18 @@ class BooksTableViewController: UITableViewController {
         buffer += validBooks
         return buffer
     }()
-    
-//    var books: [AnyObject] {
-//        guard let validAuthor = self.author, let validBooks = validAuthor["Books"] as? [AnyObject] else {
-//            return [AnyObject]()
-//        }
-//        return validBooks
-//    }
 
     let bookTableViewCellIdentifier = "BookTableViewCellIdentifier"
     let bookCoverViewControllerSegue = "BookCoverViewControllerSegue"
+    
+    // MARK: - NSCoding Protocol Initializer
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.tabBarItem = UITabBarItem(title: "Books", image: UIImage(named: "icon-books"), tag: 1)
+        self.tabBarItem.badgeValue = "7"
+    }
     
     // MARK: - UIViewController Methods
     

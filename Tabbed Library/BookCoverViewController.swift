@@ -47,6 +47,14 @@ class BookCoverViewController: UIViewController {
     
     @IBOutlet weak var bookCoverImageView: UIImageView!
     
+    // MARK: - NSCoding Protocol Intializer
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.tabBarItem = UITabBarItem(title: "Cover", image: UIImage(named: "icon-cover"), tag: 2)
+    }
+    
     // MARK: - UIViewController Methods
     
     override func viewDidLoad() {
